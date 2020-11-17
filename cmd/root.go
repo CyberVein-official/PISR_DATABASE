@@ -12,9 +12,12 @@ var rootCmd = &cobra.Command{
 	Long:  "Description:\n  Decentralized K-V database based on Redis and Tendermint Blockchain.",
 }
 
+
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err.Error())
 		os.Exit(1)
 	}
 }
+
+

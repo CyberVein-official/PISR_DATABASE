@@ -38,6 +38,7 @@ func initcybervein(cmd *cobra.Command, args []string) {
 	initTendermint()
 }
 
+
 func initTendermint() {
 	utils.DeleteFile("../chain")
 	utils.DeleteFile("./tendermint.sock")

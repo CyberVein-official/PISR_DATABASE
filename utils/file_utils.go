@@ -91,7 +91,7 @@ func ReadPIDFile(path string) string {
 	}
 	return string(line)
 }
-
+ 
 func Exists(path string) bool {
 	_, err := os.Stat(path)
 	if err == nil {
