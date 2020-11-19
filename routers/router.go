@@ -1,10 +1,10 @@
 package routers
 
-
 import (
+	"cybervein.org/CyberveinDB/routers/handlers"
+	"cybervein.org/CyberveinDB/routers/middleware"
 	"github.com/gin-gonic/gin"
 )
-
 
 func InitRouter() *gin.Engine {
 
@@ -16,10 +16,7 @@ func InitRouter() *gin.Engine {
 	{
 		db.GET("/query", handlers.QueryCommand)
 		db.GET("/query_private", handlers.QueryPrivateCommand)
-		
+		db.POST("/execute", handlers.ExecuteCommand)
 	}
 	return r
 }
-
-
-

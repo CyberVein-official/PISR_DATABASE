@@ -9,5 +9,8 @@ require (
 	github.com/creasty/defaults v1.3.0
 	github.com/spf13/cobra v0.0.5
 	golang.org/x/net v0.0.0-20191126235420-ef20fe5d7933 // indirect
+	github.com/ipfs/go-ipfs-api v0.0.2
+	go.uber.org/atomic v1.4.0
+	google.golang.org/grpc v1.25.1
 )
 
