@@ -17,6 +17,7 @@ func InitRouter() *gin.Engine {
 		db.GET("/query", handlers.QueryCommand)
 		db.GET("/query_private", handlers.QueryPrivateCommand)
 		db.POST("/execute", handlers.ExecuteCommand)
+		db.POST("/restore", handlers.RestoreLocalDatabase)
 	}
 	return r
 }

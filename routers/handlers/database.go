@@ -36,6 +36,7 @@ func ExecuteCommand(c *gin.Context) {
 	ginMsg.SuccessWithData(res)
 }
 
+
 func QueryCommand(c *gin.Context) {
 	ginMsg := models.GinMsg{C: c}
 	request := &models.CommandRequest{}
@@ -66,6 +67,7 @@ func QueryPrivateCommand(c *gin.Context) {
 	}
 	ginMsg.Response(http.StatusOK, res)
 }
+
 
 func RestoreLocalDatabase(c *gin.Context) {
 	ginMsg := models.GinMsg{C: c}
