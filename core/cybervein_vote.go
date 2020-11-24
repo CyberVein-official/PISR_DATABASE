@@ -24,8 +24,8 @@ func (v Vote) addVote(voteKey string, address string, detail interface{}) {
 		if _, ok := count.VoteDetailMap[address]; !ok {
 			count.VoteDetailMap[address] = detail
 			count.N++
-		} 	
-		
+		}
+
 		v[voteKey] = count
 	}
 }

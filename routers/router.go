@@ -19,5 +19,16 @@ func InitRouter() *gin.Engine {
 		db.POST("/execute", handlers.ExecuteCommand)
 		db.POST("/restore", handlers.RestoreLocalDatabase)
 	}
+
+
+	chain := r.Group("/chain")
+	db.Use(middleware.Authorization())
+	db.Use(middleware.Log())
+	{
+		chain.GET("/transaction", handlers.GetTransactionByHash)
+		chain.GET("/transaction_list", handlers.GetCommittedTxList)
+		
+	}
+
 	return r
 }

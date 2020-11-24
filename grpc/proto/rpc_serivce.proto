@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+service cybervein {
+    rpc Auth (AuthRequest) returns (Token);
+    rpc Query (CommandRequest) returns (QueryResponse);
+    rpc QueryPrivateData (CommandRequest) returns (QueryResponse);
+    rpc QueryPrivateDataWithAddress (QueryPrivateWithAddrRequest) returns (QueryResponse);
+    rpc Execute (CommandRequest) returns (ExecuteResponse);
+    rpc ExecuteAsync (CommandRequest) returns (ExecuteAsyncResponse);
+    rpc ExecuteWithPrivateKey (CommandRequest) returns (ExecuteResponse);
+}
+message AuthRequest {
+    string Password = 1;
+}
+message Token {
+    string token = 1;
+}
+message CommandRequest {
+    string Cmd = 1;
+}
+message QueryPrivateWithAddrRequest {
+    string Cmd = 1;
+    string Address = 2;
+}
+message QueryResponse {
+    string Result = 1;
+}
+message ExecuteResponse {
+    string Cmd = 1;
+    string ExecuteResult = 2;
+    string Signature = 3;
+    string Sequence = 4;
+    string TimeStamp = 5;
+    string Hash = 6;
+    int64 Height = 7;
+}
+message ExecuteAsyncResponse {
+    string Cmd = 1;
+    string Signature = 2;
+    string Sequence = 3;
+    string TimeStamp = 4;
+    string Hash = 5;
+}
