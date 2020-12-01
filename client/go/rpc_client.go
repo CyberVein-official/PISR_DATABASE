@@ -50,3 +50,71 @@ func (r *RpcClient) QueryPrivateData(cmd *proto.CommandRequest) (*proto.QueryRes
 	}
 	return response, nil
 }
+
+func (r *RpcClient) QueryPrivateDataWithAddress(cmd *proto.QueryPrivateWithAddrRequest) (*proto.QueryResponse, error) {
+	response, err := r.app.QueryPrivateDataWithAddress(r.GetContextWithToken(), cmd)
+	if err != nil {
+		if r.CheckExpire(err) {
+			r.UpdateAuth()
+			return r.app.QueryPrivateDataWithAddress(r.GetContextWithToken(), cmd)
+		}
+		return nil, err
+	}
+	return response, nil
+}
+func (r *RpcClient) Execute(cmd *proto.CommandRequest) (*proto.ExecuteResponse, error) {
+	response, err := r.app.Execute(r.GetContextWithToken(), cmd)
+	if err != nil {
+		if r.CheckExpire(err) {
+			r.UpdateAuth()
+			return r.app.Execute(r.GetContextWithToken(), cmd)
+		}
+		return nil, err
+	}
+	return response, nil
+}
+
+func (r *RpcClient) ExecuteAsync(cmd *proto.CommandRequest) (*proto.ExecuteAsyncResponse, error) {
+	response, err := r.app.ExecuteAsync(r.GetContextWithToken(), cmd)
+	if err != nil {
+		if r.CheckExpire(err) {
+			r.UpdateAuth()
+			return r.app.ExecuteAsync(r.GetContextWithToken(), cmd)
+		}
+		return nil, err
+	}
+	return response, nil
+}
+
+func (r *RpcClient) ExecuteWithPrivateKey(cmd *proto.CommandRequest) (*proto.ExecuteResponse, error) {
+	response, err := r.app.ExecuteWithPrivateKey(r.GetContextWithToken(), cmd)
+	if err != nil {
+		if r.CheckExpire(err) {
+			r.UpdateAuth()
+			return r.app.ExecuteWithPrivateKey(r.GetContextWithToken(), cmd)
+		}
+		return nil, err
+	}
+	return response, nil
+}
+
+func (r *RpcClient) GetContextWithToken() context.Context {
+	md := metadata.Pairs("cybervein_token", r.token)
+	return metadata.NewOutgoingContext(context.Background(), md)
+}
+
+func (r *RpcClient) CheckExpire(err error) bool {
+	if strings.Contains(err.Error(), code.CodeTypeTokenTimeoutErrorMsg) {
+		return true
+	}
+	return false
+}
+
+func (r *RpcClient) UpdateAuth() error {
+	token, err := r.app.Auth(context.Background(), &proto.AuthRequest{Password: r.password})
+	if err != nil {
+		return err
+	}
+	r.token = token.Token
+	return nil
+}
