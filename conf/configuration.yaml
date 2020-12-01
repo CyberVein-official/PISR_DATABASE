@@ -1,0 +1,22 @@
+app-config:
+  name: app-demo
+  db_password: App@1234
+  plugin: default
+
+redis-config:
+  url: 127.0.0.1:6379
+  db: 0
+  password: Redis@1234
+  rdb_path: ./dump.rdb
+
+tendermint-config:
+  url: 127.0.0.1:26657
+
+http-server-config:
+  run_mode: release
+  port: 30001
+  read_timeout: 6000
+  write_timeout: 6000
+
+rpc-config:
+  port: 40001
