@@ -2,6 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+	"os/signal"
+	"syscall"
+
 	"cybervein.org/CyberveinDB/core"
 	"cybervein.org/CyberveinDB/database"
 	"cybervein.org/CyberveinDB/logger"
@@ -10,9 +14,6 @@ import (
 	"github.com/spf13/cobra"
 	abciserver "github.com/tendermint/tendermint/abci/server"
 	tlog "github.com/tendermint/tendermint/libs/log"
-	"os"
-	"os/signal"
-	"syscall"
 )
 
 var startCmd = &cobra.Command{
