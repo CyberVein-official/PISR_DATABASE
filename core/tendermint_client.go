@@ -3,15 +3,17 @@ package core
 import (
 	"context"
 	"fmt"
+
 	"cybervein.org/CyberveinDB/logger"
 	"cybervein.org/CyberveinDB/models"
 	"cybervein.org/CyberveinDB/utils"
 	c "github.com/tendermint/tendermint/rpc/client"
 	ctypes "github.com/tendermint/tendermint/rpc/core/types"
 
-	"github.com/tendermint/tendermint/types"
 	"strconv"
 	"time"
+
+	"github.com/tendermint/tendermint/types"
 )
 
 var tendermintHttpClient *c.HTTP

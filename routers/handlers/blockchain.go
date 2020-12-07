@@ -32,7 +32,7 @@ func GetCommittedTxList(c *gin.Context) {
 	}
 	ginMsg.SuccessWithData(res)
 }
-
+// 
 func GetBlockByHeight(c *gin.Context) {
 	ginMsg := models.GinMsg{C: c}
 	request := &models.BlockHeightRequest{}

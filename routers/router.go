@@ -24,6 +24,7 @@ func InitRouter() *gin.Engine {
 	chain := r.Group("/chain")
 	db.Use(middleware.Authorization())
 	db.Use(middleware.Log())
+
 	{
 		chain.GET("/transaction", handlers.GetTransactionByHash)
 		chain.GET("/transaction_list", handlers.GetCommittedTxList)
