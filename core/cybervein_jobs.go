@@ -24,6 +24,7 @@ func CheckRedisStatus() {
 	}
 }
 
+
 func StartAllJobs() {
 	Schedulers.Start()
 }

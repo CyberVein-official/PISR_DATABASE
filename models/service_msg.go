@@ -2,11 +2,12 @@ package models
 
 import (
 	"encoding/json"
+	"time"
+
 	"cybervein.org/CyberveinDB/utils"
 	"github.com/tendermint/tendermint/p2p"
 	"github.com/tendermint/tendermint/types"
 	"github.com/tendermint/tendermint/version"
-	"time"
 )
 
 //Execution
@@ -73,6 +74,7 @@ type TransactionCommittedList struct {
 	Total int64          `json:"total"`
 	Data  []*CommittedTx `json:"data"`
 }
+
 type CommittedTx struct {
 	Data      *TxCommitData `json:"data"`
 	Signature string        `json:"signature"`
