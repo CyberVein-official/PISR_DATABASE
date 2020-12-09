@@ -39,6 +39,7 @@ const SocketAddr string = "unix://tendermint.sock"
 const ReTry int = 3
 const ReTryTime = 10 * time.Millisecond
 
+
 func InitLogStoreApplication() {
 	LogStoreApp = &LogStoreApplication{
 		valAddrToPubKeyMap:     make(map[string]abcitypes.PubKey),
@@ -56,13 +57,19 @@ func InitLogStoreApplication() {
 	}
 }
 
+
+
 func (app *LogStoreApplication) SetOption(req abcitypes.RequestSetOption) abcitypes.ResponseSetOption {
 	return abcitypes.ResponseSetOption{}
 }
 
+
+
 func (app *LogStoreApplication) Info(req abcitypes.RequestInfo) abcitypes.ResponseInfo {
 	return abcitypes.ResponseInfo{}
 }
+
+
 
 func (app *LogStoreApplication) isValid(tx []byte) (uint32, string) {
 	var data []byte
@@ -318,11 +325,12 @@ func (app *LogStoreApplication) IsPrivateCommand(commitBody models.TxCommitBody)
 		return false
 	}
 	split := strings.Split(key, PrivateSep)
-	if _, ok := app.valAddrToPubKeyMap[split[0]]; ok && strings.EqualFold(split[0], commitBody.Address) {
+	if _, ok := app.valAddrToPubKeyMap[split[0]]; ok &&  strings.EqualFold(split[0], commitBody.Address) {
 		return true
 	}
-	return false
+	return false 
 }
+
 
 func (app *LogStoreApplication) ExecuteCommand(command string, retry int, t time.Duration, updateState bool) string {
 	app.State.lock.Lock()
