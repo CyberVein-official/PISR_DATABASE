@@ -35,6 +35,7 @@ func InitRouter() *gin.Engine {
 		chain.GET("/unconfirmed_tx", handlers.GetUnconfirmedTxs)
 		chain.GET("/key_log", handlers.GetKeyLog)
 		chain.GET("/genesis", handlers.GetGenesis)
+		chain.GET("/voting_validators", handlers.GetVotingValidator)
 	}
 
 	return r
