@@ -73,6 +73,7 @@ func (g *GinMsg) DecodeRequestBody(data interface{}) {
 	utils.JsonToStruct(body, data)
 }
 
+
 type HexBytes []byte
 
 func (bz HexBytes) Marshal() ([]byte, error) {
