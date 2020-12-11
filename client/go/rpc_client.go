@@ -62,6 +62,7 @@ func (r *RpcClient) QueryPrivateDataWithAddress(cmd *proto.QueryPrivateWithAddrR
 	}
 	return response, nil
 }
+
 func (r *RpcClient) Execute(cmd *proto.CommandRequest) (*proto.ExecuteResponse, error) {
 	response, err := r.app.Execute(r.GetContextWithToken(), cmd)
 	if err != nil {
