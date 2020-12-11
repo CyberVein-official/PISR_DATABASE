@@ -48,9 +48,11 @@ func (m *AuthRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) 
 func (m *AuthRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_AuthRequest.Merge(m, src)
 }
+
 func (m *AuthRequest) XXX_Size() int {
 	return xxx_messageInfo_AuthRequest.Size(m)
 }
+
 func (m *AuthRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_AuthRequest.DiscardUnknown(m)
 }
@@ -346,9 +348,11 @@ func (m *ExecuteAsyncResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte
 func (m *ExecuteAsyncResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_ExecuteAsyncResponse.Merge(m, src)
 }
+
 func (m *ExecuteAsyncResponse) XXX_Size() int {
 	return xxx_messageInfo_ExecuteAsyncResponse.Size(m)
 }
+
 func (m *ExecuteAsyncResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_ExecuteAsyncResponse.DiscardUnknown(m)
 }
