@@ -492,3 +492,19 @@ _EXECUTEASYNCRESPONSE = _descriptor.Descriptor(
   serialized_end=447,
 )
 
+DESCRIPTOR.message_types_by_name['AuthRequest'] = _AUTHREQUEST
+DESCRIPTOR.message_types_by_name['Token'] = _TOKEN
+DESCRIPTOR.message_types_by_name['CommandRequest'] = _COMMANDREQUEST
+DESCRIPTOR.message_types_by_name['QueryPrivateWithAddrRequest'] = _QUERYPRIVATEWITHADDRREQUEST
+DESCRIPTOR.message_types_by_name['QueryResponse'] = _QUERYRESPONSE
+DESCRIPTOR.message_types_by_name['ExecuteResponse'] = _EXECUTERESPONSE
+DESCRIPTOR.message_types_by_name['ExecuteAsyncResponse'] = _EXECUTEASYNCRESPONSE
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
+DESCRIPTOR.message_types_by_name['AuthRequest'] = _AUTHREQUEST
+DESCRIPTOR.message_types_by_name['Token'] = _TOKEN
+DESCRIPTOR.message_types_by_name['CommandRequest'] = _COMMANDREQUEST
+DESCRIPTOR.message_types_by_name['QueryPrivateWithAddrRequest'] = _QUERYPRIVATEWITHADDRREQUEST
+DESCRIPTOR.message_types_by_name['QueryResponse'] = _QUERYRESPONSE
+DESCRIPTOR.message_types_by_name['ExecuteResponse'] = _EXECUTERESPONSE
+DESCRIPTOR.message_types_by_name['ExecuteAsyncResponse'] = _EXECUTEASYNCRESPONSE
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
