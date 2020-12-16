@@ -508,3 +508,24 @@ DESCRIPTOR.message_types_by_name['QueryResponse'] = _QUERYRESPONSE
 DESCRIPTOR.message_types_by_name['ExecuteResponse'] = _EXECUTERESPONSE
 DESCRIPTOR.message_types_by_name['ExecuteAsyncResponse'] = _EXECUTEASYNCRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+AuthRequest = _reflection.GeneratedProtocolMessageType('AuthRequest', (_message.Message,), {
+  'DESCRIPTOR' : _AUTHREQUEST,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:AuthRequest)
+  })
+_sym_db.RegisterMessage(AuthRequest)
+
+Token = _reflection.GeneratedProtocolMessageType('Token', (_message.Message,), {
+  'DESCRIPTOR' : _TOKEN,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:Token)
+  })
+_sym_db.RegisterMessage(Token)
+
+CommandRequest = _reflection.GeneratedProtocolMessageType('CommandRequest', (_message.Message,), {
+  'DESCRIPTOR' : _COMMANDREQUEST,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:CommandRequest)
+  })
+_sym_db.RegisterMessage(CommandRequest)
