@@ -529,3 +529,26 @@ CommandRequest = _reflection.GeneratedProtocolMessageType('CommandRequest', (_me
   # @@protoc_insertion_point(class_scope:CommandRequest)
   })
 _sym_db.RegisterMessage(CommandRequest)
+
+QueryPrivateWithAddrRequest = _reflection.GeneratedProtocolMessageType('QueryPrivateWithAddrRequest', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYPRIVATEWITHADDRREQUEST,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:QueryPrivateWithAddrRequest)
+  })
+_sym_db.RegisterMessage(QueryPrivateWithAddrRequest)
+
+QueryResponse = _reflection.GeneratedProtocolMessageType('QueryResponse', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYRESPONSE,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:QueryResponse)
+  })
+_sym_db.RegisterMessage(QueryResponse)
+
+ExecuteResponse = _reflection.GeneratedProtocolMessageType('ExecuteResponse', (_message.Message,), {
+  'DESCRIPTOR' : _EXECUTERESPONSE,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:ExecuteResponse)
+  })
+_sym_db.RegisterMessage(ExecuteResponse)
+
+
