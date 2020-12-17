@@ -529,3 +529,105 @@ CommandRequest = _reflection.GeneratedProtocolMessageType('CommandRequest', (_me
   # @@protoc_insertion_point(class_scope:CommandRequest)
   })
 _sym_db.RegisterMessage(CommandRequest)
+
+QueryPrivateWithAddrRequest = _reflection.GeneratedProtocolMessageType('QueryPrivateWithAddrRequest', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYPRIVATEWITHADDRREQUEST,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:QueryPrivateWithAddrRequest)
+  })
+_sym_db.RegisterMessage(QueryPrivateWithAddrRequest)
+
+QueryResponse = _reflection.GeneratedProtocolMessageType('QueryResponse', (_message.Message,), {
+  'DESCRIPTOR' : _QUERYRESPONSE,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:QueryResponse)
+  })
+_sym_db.RegisterMessage(QueryResponse)
+
+ExecuteResponse = _reflection.GeneratedProtocolMessageType('ExecuteResponse', (_message.Message,), {
+  'DESCRIPTOR' : _EXECUTERESPONSE,
+  '__module__' : 'cybervein_pb2'
+  # @@protoc_insertion_point(class_scope:ExecuteResponse)
+  })
+_sym_db.RegisterMessage(ExecuteResponse)
+
+
+
+_cybervein = _descriptor.ServiceDescriptor(
+  name='cybervein',
+  full_name='cybervein',
+  file=DESCRIPTOR,
+  index=0,
+  serialized_options=None,
+  serialized_start=450,
+  serialized_end=824,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Auth',
+    full_name='cybervein.Auth',
+    index=0,
+    containing_service=None,
+    input_type=_AUTHREQUEST,
+    output_type=_TOKEN,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Query',
+    full_name='cybervein.Query',
+    index=1,
+    containing_service=None,
+    input_type=_COMMANDREQUEST,
+    output_type=_QUERYRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='QueryPrivateData',
+    full_name='cybervein.QueryPrivateData',
+    index=2,
+    containing_service=None,
+    input_type=_COMMANDREQUEST,
+    output_type=_QUERYRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='QueryPrivateDataWithAddress',
+    full_name='cybervein.QueryPrivateDataWithAddress',
+    index=3,
+    containing_service=None,
+    input_type=_QUERYPRIVATEWITHADDRREQUEST,
+    output_type=_QUERYRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Execute',
+    full_name='cybervein.Execute',
+    index=4,
+    containing_service=None,
+    input_type=_COMMANDREQUEST,
+    output_type=_EXECUTERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ExecuteAsync',
+    full_name='cybervein.ExecuteAsync',
+    index=5,
+    containing_service=None,
+    input_type=_COMMANDREQUEST,
+    output_type=_EXECUTEASYNCRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ExecuteWithPrivateKey',
+    full_name='cybervein.ExecuteWithPrivateKey',
+    index=6,
+    containing_service=None,
+    input_type=_COMMANDREQUEST,
+    output_type=_EXECUTERESPONSE,
+    serialized_options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_cybervein)
+
+DESCRIPTOR.services_by_name['cybervein'] = _cybervein
+
+# @@protoc_insertion_point(module_scope)
