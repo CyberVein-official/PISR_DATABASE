@@ -38,6 +38,7 @@ func StartRedisDaemon() {
 	//SavePID(cmd.Process.Pid, DBPID_FILE)
 }
 
+
 func SavePID(pid int, pidFile string) {
 
 	file, err := os.Create(pidFile)
