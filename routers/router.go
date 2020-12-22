@@ -20,7 +20,6 @@ func InitRouter() *gin.Engine {
 		db.POST("/restore", handlers.RestoreLocalDatabase)
 	}
 
-
 	chain := r.Group("/chain")
 	db.Use(middleware.Authorization())
 	db.Use(middleware.Log())
@@ -36,6 +35,7 @@ func InitRouter() *gin.Engine {
 		chain.GET("/key_log", handlers.GetKeyLog)
 		chain.GET("/genesis", handlers.GetGenesis)
 		chain.GET("/voting_validators", handlers.GetVotingValidator)
+		chain.POST("/update_validators", handlers.UpdateValidators)
 	}
 
 	return r
