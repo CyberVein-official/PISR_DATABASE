@@ -38,6 +38,7 @@ type ExecuteAsyncResponse struct {
 	Hash      string `json:"hash"`
 }
 
+// QueryResponse
 type QueryResponse struct {
 	Result string `json:"result"`
 }

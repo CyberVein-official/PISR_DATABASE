@@ -11,6 +11,8 @@ func InitRouter() *gin.Engine {
 	r := gin.Default()
 
 	r.POST("/login", handlers.Login)
+
+	db := r.Group("/db")
 	db.Use(middleware.Authorization())
 	db.Use(middleware.Log())
 	{
@@ -23,7 +25,6 @@ func InitRouter() *gin.Engine {
 	chain := r.Group("/chain")
 	db.Use(middleware.Authorization())
 	db.Use(middleware.Log())
-
 	{
 		chain.GET("/transaction", handlers.GetTransactionByHash)
 		chain.GET("/transaction_list", handlers.GetCommittedTxList)
@@ -36,6 +37,7 @@ func InitRouter() *gin.Engine {
 		chain.GET("/genesis", handlers.GetGenesis)
 		chain.GET("/voting_validators", handlers.GetVotingValidator)
 		chain.POST("/update_validators", handlers.UpdateValidators)
+
 	}
 
 	return r
