@@ -13,10 +13,12 @@ type ValidatorUpdateBody struct {
 	Sequence        string               `json:"sequence"`
 }
 
+
 type ValidatorUpdateData struct {
 	PublicKey string `json:"public_key"`
 	Power     string `json:"power"`
 }
+
 
 type TxCommitData struct {
 	Operation string `json:"operation"`

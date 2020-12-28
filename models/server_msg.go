@@ -23,6 +23,7 @@ type ChainInfoRequest struct {
 	Max int `json:"max"`
 }
 
+
 type LoginRequest struct {
 	Name     string `json:"db_name"`
 	Password string `json:"db_password"`
