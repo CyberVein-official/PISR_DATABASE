@@ -133,6 +133,7 @@ func GetKey(command string) (string, error) {
 	return split[1], nil
 }
 
+// 
 func ReplaceKey(command string, key string) (string, error) {
 	if !IsValidCmd(command) {
 		return "", errors.New("Invalid command : " + command)

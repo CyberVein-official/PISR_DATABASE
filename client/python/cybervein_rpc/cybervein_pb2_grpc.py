@@ -105,47 +105,4 @@ class cyberveinServicer(object):
     raise NotImplementedError('Method not implemented!')
 
 
-def add_cyberveinServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'Auth': grpc.unary_unary_rpc_method_handler(
-          servicer.Auth,
-          request_deserializer=cybervein__pb2.AuthRequest.FromString,
-          response_serializer=cybervein__pb2.Token.SerializeToString,
-      ),
-      'Query': grpc.unary_unary_rpc_method_handler(
-          servicer.Query,
-          request_deserializer=cybervein__pb2.CommandRequest.FromString,
-          response_serializer=cybervein__pb2.QueryResponse.SerializeToString,
-      ),
-      'QueryPrivateData': grpc.unary_unary_rpc_method_handler(
-          servicer.QueryPrivateData,
-          request_deserializer=cybervein__pb2.CommandRequest.FromString,
-          response_serializer=cybervein__pb2.QueryResponse.SerializeToString,
-      ),
-      'QueryPrivateDataWithAddress': grpc.unary_unary_rpc_method_handler(
-          servicer.QueryPrivateDataWithAddress,
-          request_deserializer=cybervein__pb2.QueryPrivateWithAddrRequest.FromString,
-          response_serializer=cybervein__pb2.QueryResponse.SerializeToString,
-      ),
-      'Execute': grpc.unary_unary_rpc_method_handler(
-          servicer.Execute,
-          request_deserializer=cybervein__pb2.CommandRequest.FromString,
-          response_serializer=cybervein__pb2.ExecuteResponse.SerializeToString,
-      ),
-      'ExecuteAsync': grpc.unary_unary_rpc_method_handler(
-          servicer.ExecuteAsync,
-          request_deserializer=cybervein__pb2.CommandRequest.FromString,
-          response_serializer=cybervein__pb2.ExecuteAsyncResponse.SerializeToString,
-      ),
-      'ExecuteWithPrivateKey': grpc.unary_unary_rpc_method_handler(
-          servicer.ExecuteWithPrivateKey,
-          request_deserializer=cybervein__pb2.CommandRequest.FromString,
-          response_serializer=cybervein__pb2.ExecuteResponse.SerializeToString,
-      ),
-  }
-  
-  generic_handler = grpc.method_handlers_generic_handler(
-      'cybervein', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
-
 
