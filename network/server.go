@@ -21,6 +21,7 @@ type Server struct {
 	httpServer *http.Server
 }
 
+
 func NewServer() *Server {
 
 	server := &Server{
