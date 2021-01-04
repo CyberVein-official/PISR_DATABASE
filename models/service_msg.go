@@ -30,6 +30,7 @@ type ExecuteResponse struct {
 	Height        int64  `json:"height"`
 }
 
+
 type ExecuteAsyncResponse struct {
 	Cmd       string `json:"command"`
 	Signature string `json:"signature"`
@@ -37,6 +38,7 @@ type ExecuteAsyncResponse struct {
 	TimeStamp string `json:"time_stamp"`
 	Hash      string `json:"hash"`
 }
+
 
 // QueryResponse
 type QueryResponse struct {

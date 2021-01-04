@@ -16,11 +16,13 @@ type GinMsg struct {
 	C *gin.Context
 }
 
+
 type CommonResponse struct {
 	Code    uint32      `json:"code"`
 	CodeMsg string      `json:"code_info"`
 	Data    interface{} `json:"data"`
 }
+
 
 func (g *GinMsg) Response(httpCode int, data interface{}) {
 	g.C.JSON(httpCode, data)
