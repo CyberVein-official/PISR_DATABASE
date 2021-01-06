@@ -105,4 +105,27 @@ class cyberveinServicer(object):
     raise NotImplementedError('Method not implemented!')
 
 
-
+def add_cyberveinServicer_to_server(servicer, server):
+  rpc_method_handlers = {
+      'Auth': grpc.unary_unary_rpc_method_handler(
+          servicer.Auth,
+          request_deserializer=cybervein__pb2.AuthRequest.FromString,
+          response_serializer=cybervein__pb2.Token.SerializeToString,
+      ),
+      'Query': grpc.unary_unary_rpc_method_handler(
+          servicer.Query,
+          request_deserializer=cybervein__pb2.CommandRequest.FromString,
+          response_serializer=cybervein__pb2.QueryResponse.SerializeToString,
+      ),
+      'QueryPrivateData': grpc.unary_unary_rpc_method_handler(
+          servicer.QueryPrivateData,
+          request_deserializer=cybervein__pb2.CommandRequest.FromString,
+          response_serializer=cybervein__pb2.QueryResponse.SerializeToString,
+      ),
+      'QueryPrivateDataWithAddress': grpc.unary_unary_rpc_method_handler(
+          servicer.QueryPrivateDataWithAddress,
+          request_deserializer=cybervein__pb2.QueryPrivateWithAddrRequest.FromString,
+          response_serializer=cybervein__pb2.QueryResponse.SerializeToString,
+      )
+  }
+  
