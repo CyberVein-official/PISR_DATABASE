@@ -126,6 +126,12 @@ def add_cyberveinServicer_to_server(servicer, server):
           servicer.QueryPrivateDataWithAddress,
           request_deserializer=cybervein__pb2.QueryPrivateWithAddrRequest.FromString,
           response_serializer=cybervein__pb2.QueryResponse.SerializeToString,
+      ),
+      'Execute': grpc.unary_unary_rpc_method_handler(
+          servicer.Execute,
+          request_deserializer=cybervein__pb2.CommandRequest.FromString,
+          response_serializer=cybervein__pb2.ExecuteResponse.SerializeToString,
       )
+      
   }
   
