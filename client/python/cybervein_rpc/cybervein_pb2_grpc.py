@@ -132,6 +132,16 @@ def add_cyberveinServicer_to_server(servicer, server):
           request_deserializer=cybervein__pb2.CommandRequest.FromString,
           response_serializer=cybervein__pb2.ExecuteResponse.SerializeToString,
       )
-      
+       'ExecuteAsync': grpc.unary_unary_rpc_method_handler(
+          servicer.ExecuteAsync,
+          request_deserializer=cybervein__pb2.CommandRequest.FromString,
+          response_serializer=cybervein__pb2.ExecuteAsyncResponse.SerializeToString,
+      ),
+
+      'ExecuteWithPrivateKey': grpc.unary_unary_rpc_method_handler(
+          servicer.ExecuteWithPrivateKey,
+          request_deserializer=cybervein__pb2.CommandRequest.FromString,
+          response_serializer=cybervein__pb2.ExecuteResponse.SerializeToString,
+      ),
   }
   
